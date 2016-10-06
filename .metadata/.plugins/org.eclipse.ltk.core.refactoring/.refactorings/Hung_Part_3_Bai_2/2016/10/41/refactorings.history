@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;t.Part_3_Bai_2.java&apos; to &apos;Hung_Part_3_Bai_2.java&apos;&#x0A;- Original project: &apos;Hung_Part_3_Bai_2&apos;&#x0A;- Original element: &apos;t.Part_3_Bai_2.java&apos;&#x0A;- Renamed element: &apos;t.Hung_Part_3_Bai_2.java&apos;" description="Rename compilation unit &apos;Part_3_Bai_2.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;t{Part_3_Bai_2.java" name="Hung_Part_3_Bai_2.java" references="false" stamp="1475736297598" version="1.0"/>
+</session>

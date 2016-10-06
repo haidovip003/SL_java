@@ -1,0 +1,49 @@
+package securelogix.java.course;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmployeeManager {
+	public EmployeeManager() {
+		tmaEmployees = new ArrayList<TMAEmployee>();
+	}
+
+	public void addEmployee(TMAEmployee employee) {
+		tmaEmployees.add(employee);
+	}
+
+	public ArrayList<TMAEmployee> getEmployee(String searchKey) {
+		ArrayList<TMAEmployee> result = new ArrayList<>();
+
+		return result;
+	}
+
+	public ArrayList<TMAEmployee> getTmaEmployees() {
+		return tmaEmployees;
+	}
+
+//	private void setTmaEmployees(ArrayList<TMAEmployee> tmaEmployees) {
+//		this.tmaEmployees = tmaEmployees;
+//	}
+	
+	public TMAEmployee ToEmployee(String employee_string)
+	{
+		TMAEmployee employee = new TMAEmployee("");
+		
+		return employee;
+	}
+	
+	public ArrayList<TMAEmployee> getEmployeeFromFile(FileUtil file) throws IOException
+	{
+		ArrayList<TMAEmployee> result = new ArrayList<>();
+		List<String> empStrings = file.read();
+		TMAEmployee emp;
+		for (String string : empStrings) {
+			
+		}
+		return result;
+	}
+
+	private ArrayList<TMAEmployee> tmaEmployees;
+}

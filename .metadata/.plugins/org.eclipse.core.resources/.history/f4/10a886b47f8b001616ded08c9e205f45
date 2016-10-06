@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		int search;
+		DataInit di = new DataInit();
+		int[] ar = new int[0];
+		di.addToArray(ar, 10);
+		ar=di.arrayInit;
+		
+		System.out.println("\nPlease enter the information: ");
+		search=scan.nextInt();
+		di.searchArray(ar, search);
+		scan.close();
+	}
+
+}

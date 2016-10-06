@@ -1,0 +1,82 @@
+/**
+ * 
+ */
+package securelogix.java.course;
+
+import java.util.Date;
+
+/**
+ * @author macbookpro
+ *
+ */
+public class TMAEmployee {
+
+	public TMAEmployee(String name) {
+		this.setName(name);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	private void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		if (Global.isInEnum(title)) {
+			this.title = title;
+		} else {
+			this.title = Global.Title.NOT_DEFINE;
+		}
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public Number getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Number phone) {
+		this.phone = phone;
+	}
+
+	public String getHometown() {
+		return hometown;
+	}
+
+	public void setHometown(String hometown) {
+		this.hometown = hometown;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
+	private String name;
+	private String team;
+	private String title;
+	private Date birthday;
+	private Number phone;
+	private String hometown;
+}

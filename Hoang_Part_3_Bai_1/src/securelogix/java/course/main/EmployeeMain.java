@@ -1,0 +1,73 @@
+package securelogix.java.course.main;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import securelogix.java.course.business.EmployeeManager;
+import securelogix.java.course.data.FileUtil;
+import securelogix.java.course.model.TMAEmployee;
+
+public class EmployeeMain {
+	static ArrayList<TMAEmployee> employees = new ArrayList<>();
+	static EmployeeManager empManager = new EmployeeManager();
+
+	public static void main(String[] args) {
+		empManager.setTmaEmployees(employees);
+		try {
+			initDefault("");
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		Scanner reader = new Scanner(System.in);
+		boolean repeatFlag = false;
+		String search_text;
+		do {
+			System.out.println("Danh sach thong tin nhan vien:");
+			printEmployeeList(employees);
+
+			System.out.print("Nhap ki tu de tim nhan vien tuong ung:");
+			search_text = reader.nextLine();
+
+			ArrayList<TMAEmployee> people_result = empManager.searchEmployee(search_text);
+			if (!people_result.isEmpty()) {
+				System.out.println("..:: Tim thay ket qua ::..");
+				printEmployeeList(people_result);
+			} else {
+				System.out.println("Khong tim thay nhan vien voi tu` khoa' [" + search_text + "]");
+			}
+
+			System.out.println("=> Ban muon thu lai ko ?(y/n)");
+			if (reader.nextLine().toLowerCase().equals("y")) {
+				repeatFlag = true;
+			}
+		} while (repeatFlag == true);
+
+		reader.close();
+		System.out.println("Program ended.Thanks!");
+	}
+
+	private static void printEmployeeList(ArrayList<TMAEmployee> employees2) {
+		for (TMAEmployee tmaEmployee : employees2) {
+			System.out.println(tmaEmployee.toString());
+		}
+	}
+
+	private static void initDefault(String filepath) throws Exception {
+		FileUtil file = new FileUtil(filepath);
+		if (file.isFileExisted()) {
+			empManager.getEmployeesFromFile(file);
+		} else {
+			TMAEmployee chien = new TMAEmployee();
+			chien.Init("Nguyen Huu Chien-SecureLogix-Senior Engineer-15/02/1989-0937625358-Dak Lak");
+			employees.add(chien);
+			TMAEmployee phu = new TMAEmployee();
+			phu.Init("Nguyen Thai Phu-SecureLogix-Consultant-28/12/1988-0973758298-Dallas");
+			employees.add(phu);
+			TMAEmployee hung = new TMAEmployee();
+			hung.Init("Tran Manh Hung-SecureLogix-Senior Engineer-07/03/1990-01667482912-Khanh Hoa");
+			employees.add(hung);
+			empManager.setEmployeeToFile(employees, file);
+		}
+	}
+
+}

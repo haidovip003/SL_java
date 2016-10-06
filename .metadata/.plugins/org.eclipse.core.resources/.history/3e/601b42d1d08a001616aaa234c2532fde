@@ -1,0 +1,53 @@
+package securelogix.java.course;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FileUtil {
+	public FileUtil(String filepath){
+		this.setFilepath(filepath);
+	}
+
+	public Boolean write(String value) throws IOException {
+		Boolean result = false;
+		try {
+			List<String> lines = new ArrayList<>();
+			lines.add(value);
+			Files.write(this.filepath, lines, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+			result = true;
+		} catch (Exception e) {
+			result = false;
+		}
+
+		return result;
+	}
+
+	public List<String> read() throws IOException{
+		List<String> result = new ArrayList<>();
+		try {
+			result = Files.readAllLines(this.filepath);
+		} catch (IOException ex) {
+			throw ex;
+		}
+		return result;
+	}
+
+	public Boolean isFileExisted() {
+		return filepath.toFile().isFile();
+	}
+
+	public String getFilepath() {
+		return filepath.toString();
+	}
+
+	public void setFilepath(String filepath) {
+		this.filepath = Paths.get(filepath);
+	}
+
+	private Path filepath;
+}

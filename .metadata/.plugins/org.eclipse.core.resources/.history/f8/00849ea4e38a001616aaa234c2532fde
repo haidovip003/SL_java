@@ -1,0 +1,5 @@
+package securelogix.java.course;
+
+public enum Title {
+
+}

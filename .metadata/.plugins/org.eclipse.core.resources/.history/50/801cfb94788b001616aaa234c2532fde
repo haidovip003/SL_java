@@ -1,0 +1,22 @@
+package securelogix.java.course.main;
+
+import securelogix.java.course.model.TMAEmployee;
+import test.Employee;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+
+	}
+
+	private void initDefault() {
+		TMAEmployee chien = new TMAEmployee("Nguyen Huu Chien-SecureLogix-Senior Engineer-0937625358-Dak Lak")
+		Chien.setBirthday("15/02/1989");
+		Employee Phu = new Employee("Nguyen Thai Phu", "SecureLogix",
+				"Consultant", "0973758298", "Dallas");
+		Phu.setBirthday("28/12/1988");
+		Employee Hung = new Employee("Tran Manh Hung", "SecureLogix",
+				"Senior Engineer", "01667482912", "Khanh Hoa");
+	}
+
+}

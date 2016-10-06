@@ -1,0 +1,104 @@
+/**
+ * 
+ */
+package securelogix.java.course;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @author macbookpro
+ *
+ */
+public class TMAEmployee {
+
+	public TMAEmployee(String name) {
+		this.setName(name);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	private void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		if (Global.isInEnum(title)) {
+			this.title = title;
+		} else {
+			this.title = Global.Title.NOT_DEFINE.name();
+		}
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public Number getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Number phone) {
+		this.phone = phone;
+	}
+
+	public String getHometown() {
+		return hometown;
+	}
+
+	public void setHometown(String hometown) {
+		this.hometown = hometown;
+	}
+
+	public Boolean toEmployee(String employee_string) {
+		Boolean result = false;
+		try {
+			List<String> emp_elements = Arrays.asList(employee_string.split("-"));
+			if (emp_elements.size() == 6) {
+				this.setName(emp_elements.get(0));
+				this.setTeam(emp_elements.get(1));
+				this.setTitle(emp_elements.get(2));
+				this.setBirthday(this.toBirthday(emp_elements.get(3)));
+				this.setPhone(this.toemp_elements.get(4));
+				this.setHometown(emp_elements.get(5));
+				result = true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw e;
+		}
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return name + " - " + team + " - " + title + " - " + birthday + " - " + phone + " - " + hometown;
+	}
+
+	private String name;
+	private String team;
+	private String title;
+	private Date birthday;
+	private Number phone;
+	private String hometown;
+}

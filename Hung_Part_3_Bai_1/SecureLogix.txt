@@ -1,0 +1,9 @@
+Hung Tran Manh - SecureLogix - Senior Engineer - 06/02/1990 - 0123456789 - Nha Trang
+Tu Pham Tran Vuong - SecureLogix - Senior Engineer - 01/01/1987 - 9874563210 - Tien Giang
+Chien Nguyen Huu - SecureLogix - Senior Engineer - 01/01/1989 - 8523697410 - Dak Lak
+Phu Nguyen Thai - SecureLogix - Consultant - 16/12/1988 - 1478520369 - Da Lat
+Danh Ho Cong- SecureLogix - Senior Engineer - 04/02/1990 - 8452107963 - Binh Thuan
+Tuyen Nguyen Thi Thanh - SecureLogix - Senior Engineer - 15/03/1988 - 9874102563 - Tuy Hoa
+Hoang Le Huy - SecureLogix - Consultant - 06/10/1984 - 8741025639 - Da Lat
+Tuyen Vu Xuan - SecureLogix - Engineer - 22/04/1991 - 0123456789 - Nha Trang
+Trung Doan Bao - SecureLogix - Consultant - 06/02/1989 - 9632587412 - Tien Giang

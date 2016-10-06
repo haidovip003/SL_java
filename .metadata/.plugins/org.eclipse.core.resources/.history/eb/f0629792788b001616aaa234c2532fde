@@ -1,0 +1,13 @@
+package securelogix.java.course.main;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+
+	}
+
+	private void initDefault() {
+		
+	}
+
+}
